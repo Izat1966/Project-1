@@ -43,7 +43,7 @@ int main() {
         cin >> a >> b;
         cout << "The number at index " << a << " is " << arr[a] << endl;
         cout << "The number at index " << b << " is " << arr[b] << endl;
-        if (arr[a] == arr[b] && a!=b && a>=0 && b>=0) {
+        if (arr[a] == arr[b] && a!=b && a>=0 && b>=0 && a<n && b<n) {
             cout << "These numbers are equal" << endl;
             found[a] = 1;
             found[b] = 1;
@@ -52,8 +52,10 @@ int main() {
             cout << "The indices are two same numbers , they must be different" << endl;
         }else if (a<0 || b<0) {
             cout << "Invalid indices"<<endl;
+        }else if(a>=n || b>=n) {
+            cout << "Invalid indice more than elements in array , it must be less" << endl;
         }else {
-            cout << "These numbers are not equal" << endl;
+            cout << "These numbers are not equal" <<endl;
         }
         moves++;
         if (cnt == n) {
